@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="fonts/fonts.css">
+
+    <!-- Primary Meta Tags -->
+    <title>Putting Yourself Out There - Ironfacebuster</title>
+    <meta name="title" content="Putting Yourself Out There - Ironfacebuster">
+    <meta name="description"
+        content="I wouldn't call myself the world's best photographer, but I do think I can snap some beautiful pictures.">
+
+    <meta property="theme-color" content="#e0ffea">
+    <meta property="theme-color" content="#e0ffea" media="(prefers-color-scheme: light)">
+    <!-- force the theme color even if in dark mode? -->
+    <meta property="theme-color" content="#e0ffea" media="(prefers-color-scheme: dark)">
+
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ironfacebuster.tk/folio.html">
+    <meta property="og:title" content="Putting Yourself Out There - Ironfacebuster">
+    <meta property="og:description"
+        content="I wouldn't call myself the world's best photographer, but I do think I can snap some beautiful pictures.">
+    <meta property="og:image"
+        content="https://github.com/Ironfacebuster/Ironfacebuster.github.io/blob/main/portfolio/thumbnail.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.ironfacebuster.tk/folio.html">
+    <meta property="twitter:title" content="Putting Yourself Out There - Ironfacebuster">
+    <meta property="twitter:description"
+        content="I wouldn't call myself the world's best photographer, but I do think I can snap some beautiful pictures.">
+    <meta property="twitter:image"
+        content="https://github.com/Ironfacebuster/Ironfacebuster.github.io/blob/main/portfolio/thumbnail.jpg">
+
+    <style>
+        body {
+            --accent: #96E6B3;
+            --primary: #e0ffea;
+            --secondary: #568259;
+            --tertiary: #344e37;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: var(--primary);
+            user-select: none;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            font-family: 'Oswald', Arial, Helvetica, sans-serif;
+            background-color: var(--primary);
+            color: var(--tertiary);
+            /* padding: 1em; */
+            padding-left: 10em;
+        }
+
+        header h1 {
+            position: sticky;
+            margin: 5px;
+            margin-left: 0px;
+            width: fit-content;
+            font-weight: lighter;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        year {
+            background-color: var(--primary);
+            display: block;
+            width: auto;
+            padding-left: 10em;
+            padding-right: 10em;
+        }
+
+        year img {
+            cursor: pointer;
+            margin: 2px 1.5px;
+            max-height: 25em;
+            max-width: 100%;
+            /* height: 25em; */
+            /* width: auto; */
+            border-radius: 5px;
+        }
+
+        divider {
+            display: block;
+            padding: 15px;
+            padding-left: 10em;
+            font-weight: lighter;
+            user-select: none;
+            background-color: var(--primary);
+            color: var(--tertiary);
+        }
+
+        divider h2 {
+            font-family: 'Oswald', Arial, Helvetica, sans-serif;
+        }
+
+        divider content {
+            display: block;
+            max-width: 40em;
+            width: 100%;
+            margin-bottom: 0.25em;
+
+            overflow-y: hidden;
+
+            max-height: 20px;
+
+            transition: height 1s ease-out;
+        }
+
+        divider content[active=true] {
+            max-height: fit-content;
+            transition: height 1s ease-in;
+        }
+
+        drop {
+            max-width: 40em;
+            text-align: center;
+            height: 15px;
+            position: relative;
+            cursor: pointer;
+            display: block;
+            margin-top: 5px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+
+            font-size: auto;
+        }
+
+        date {
+            background-color: var(--tertiary);
+            color: var(--primary);
+            display: block;
+            width: 100%;
+            /* margin-bottom: 4px; */
+            /* padding-bottom: 4px; */
+            padding-top: 0.25em;
+            padding-bottom: 0.5em;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        month {
+            background-color: var(--primary);
+            color: var(--tertiary);
+            display: block;
+            width: 100%;
+            margin-bottom: 4px;
+            padding-top: 0.25em;
+            padding-bottom: 0.5em;
+            /* text-align: center; */
+            font-weight: bolder;
+            font-size: 25px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        @media screen and (max-width: 1025px) {
+            year {
+                padding-left: 2.5em;
+                padding-right: 2.5em;
+            }
+
+            header {
+                padding-left: 2.5em;
+            }
+
+            divider {
+                padding-left: 2.5em;
+            }
+
+            img {
+                height: 15em;
+            }
+        }
+
+        @media screen and (max-width: 725px) {
+            year {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+
+            header {
+                padding-left: 1em;
+            }
+
+            divider {
+                padding-left: 1em;
+            }
+
+            img {
+                height: 10em;
+            }
+        }
+    </style>
+
+    <!-- modal stuff -->
+    <style>
+        modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.65);
+        }
+
+        modal content {
+            display: block;
+            text-align: -webkit-center;
+            text-align: left;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        modal camera {
+            position: relative;
+            color: var(--primary);
+            display: block;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        camera img {
+            text-align: center;
+            display: block;
+
+            height: auto;
+            width: auto;
+
+            border-radius: 0;
+            margin: 0;
+
+            transition: max-height 0.2s, max-width 0.2s;
+        }
+
+        close {
+            display: block;
+            text-align: left;
+            width: fit-content;
+            padding: 5px;
+            /* margin-right: auto; */
+            font-size: 25px;
+            font-family: "Oswald", Arial, Helvetica, sans-serif;
+            color: white;
+            cursor: pointer;
+        }
+
+        camera div {
+            margin-left: 0;
+            font-weight: normal;
+            font-size: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <modal onclick="closeModal(this)">
+        <content onclick="closeModal(this)">
+            <close onclick="closeModal(this)">✖</close>
+            <camera onclick="" id="modal_data">
+                <img id="modal_image" src="portfolio/2021/PXL_20211106_222422768.PORTRAIT.jpg">
+                <div id="camera_name">Pixel 5</div>
+            </camera>
+        </content>
+    </modal>
+
+    <header>
+        <h1 onclick="window.location.href='index.html'">Ironfacebuster</h1>
+    </header>
+    <div style="height: 57.33px;"></div>
+    <divider>
+        <!-- <h2>Preamble</h2> -->
+        <content active=true>
+            I wouldn't call myself the world's best photographer, but I do think I can snap some beautiful pictures.
+            As someone just getting into a craft, my tools are somewhat limited. My main shooter is a 2000-something
+            Canon Rebel XT; a hand-me-down from my mom! I recently picked up a slightly older Canon Rebel X, a 35mm film
+            camera, as well. My final shooter is something of an everyday carry: my phone! I have a Google Pixel 5,
+            which (in certain conditions) takes absolutely breathtaking pictures. This humble set of tools is no
+            Fujifilm GFX100S, but you make the most of what you have, you know?<br><br>
+            Regardless, I'm glad to be able to share my work with you. I hope you enjoy my photos as much as I did when
+            I took them. Please enjoy.
+        </content>
+    </divider>
+    <date> 2021 </date>
+    <divider>
+        <h2>A Sequel, of Sorts</h2>
+        <content>
+            After the trainwreck of 2020, something rears its head. All the fears of 2020 came back, and
+            stronger.<br><br>
+            You can live to ignore it, and face the consequences of your actions. Or, you could take it in full pride,
+            and be alone. It's really a matter of personal choice.<br><br>
+            I want to go out, but something holds me back inside. Something pulls me
+            back, and I want to be alone again.<br><br><br>
+            "Sure, I'll take a picture of you," I said.
+        </content>
+        <drop active=false onclick="showContent(this.parentNode)">show more</drop>
+    </divider>
+    <year>
+        <month>Winter</month>
+        <img loading="lazy" src="portfolio/2021/IMG_9594_edit.JPG" camera="Canon Rebel XT" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/IMG_9602_edit.JPG" camera="Canon Rebel XT" onclick="openModal(this)">
+        <month>Fall</month>
+        <img loading="lazy" src="portfolio/2021/IMG_9479.JPG" camera="Canon Rebel XT" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/IMG_9473.JPG" camera="Canon Rebel XT" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/IMG_9481.JPG" camera="Canon Rebel XT" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/IMG_9482.JPG" camera="Canon Rebel XT" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20211106_222422768.PORTRAIT.jpg" camera="Pixel 5"
+            onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20211106_222434003.PORTRAIT.jpg" camera="Pixel 5"
+            onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20211003_162433145.jpg" camera="Pixel 5" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210814_204941474.jpg" camera="Pixel 5" onclick="openModal(this)">
+
+        <month>Summer</month>
+        <img loading="lazy" src="portfolio/2021/PXL_20210822_181927180.jpg" camera="Pixel 5" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210807_191607499.jpg" camera="Pixel 5" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210801_175008871.jpg" camera="Pixel 5" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210731_000754716_2.jpg" camera="Pixel 5"
+            onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210607_185936155.MP.jpg" camera="Pixel 5"
+            onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210607_185611498.jpg" camera="Pixel 5" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210726_233856470.MP.jpg" camera="Pixel 5"
+            onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210705_014547288_2.jpg" camera="Pixel 5"
+            onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210705_015128432_2.jpg" camera="Pixel 5"
+            onclick="openModal(this)">
+
+        <img loading="lazy" src="portfolio/2021/IMG_9452.JPG" camera="Canon Rebel XT" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/IMG_9453.JPG" camera="Canon Rebel XT" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/IMG_9455.JPG" camera="Canon Rebel XT" onclick="openModal(this)">
+
+        <img loading="lazy" src="portfolio/2021/PXL_20210625_173133150.PORTRAIT_2.jpg" camera="Pixel 5"
+            onclick="openModal(this)">
+
+        <month>Spring</month>
+        <img loading="lazy" src="portfolio/2021/PXL_20210410_235952649.jpg" camera="Pixel 5" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210320_183203168.jpg" camera="Pixel 5" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210320_181008949.PORTRAIT.jpg" camera="Pixel 5"
+            onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2021/PXL_20210320_193406952.jpg" camera="Pixel 5" onclick="openModal(this)">
+    </year>
+    <date> 2020 </date>
+    <divider>
+        <h2>When Everything Changed</h2>
+        <content>
+            Twenty-twenty was, in few words, wild.<br><br>
+            A worldwide pandemic; heavy political unrest; fearmongering and the scent of war on the horizon. Either
+            you're with me, or you're against me.<br><br>
+            Of course, me being an introvert, I found myself inside most of the time anyways. An outside observer
+            looking in with soft eyes. Unfortunately this brings with it its own set of problems. The despair of being
+            alone.
+        </content>
+        <drop active=false onclick="showContent(this.parentNode)">show more</drop>
+    </divider>
+    <year>
+        <month>Winter</month>
+        <img loading="lazy" src="portfolio/2020/PXL_20201225_215657474.PORTRAIT.jpg" camera="Pixel 3"
+            onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2020/PXL_20201225_013831181.PORTRAIT_4.jpg" camera="Pixel 3"
+            onclick="openModal(this)">
+
+        <month>Summer</month>
+        <img loading="lazy" src="portfolio/2020/00000PORTRAIT_00000_BURST20200722172147233.jpg" camera="Pixel 3"
+            onclick="openModal(this)">
+
+        <month>Spring</month>
+        <img loading="lazy" src="portfolio/2020/IMG_20200404_194738_2.jpg" camera="Pixel 3" onclick="openModal(this)">
+    </year>
+
+    <date> 2019 </date>
+    <divider>
+        <h2>Same to you, Different to me</h2>
+        <content>
+            Twenty-nineteen was a transitional period for me. I was just getting used to my new school, and my new
+            house. I had made some new friends, who I'd hoped would stay around for longer.<br><br>
+            It was rough, for me, and my parents. But I like to think it worked out in the end.
+        </content>
+        <drop active=false onclick="showContent(this.parentNode)">show more</drop>
+    </divider>
+    <year>
+        <month>Spring</month>
+        <img loading="lazy" src="portfolio/2019/IMG_20190408_151242_2.jpg" camera="Pixel 3" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2019/IMG_20190408_151235.jpg" camera="Pixel 3" onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2019/00100lPORTRAIT_00100_BURST20190418200406266_COVER.jpg" camera="Pixel 3"
+            onclick="openModal(this)">
+        <img loading="lazy" src="portfolio/2019/IMG_20190409_151210.jpg" camera="Pixel 3" onclick="openModal(this)">
+    </year>
+
+    <script>
+        let viewer = document.getElementById("modal_image")
+        let camera_name = document.getElementById("camera_name")
+        let overlay = document.getElementsByTagName("modal")[0]
+        window.addEventListener("resize", () => {
+            recalcSize()
+        })
+
+        function recalcSize() {
+            let max_width = Math.min(window.innerWidth - 100, 900)
+            let max_height = Math.min(window.innerHeight - 100, 1000)
+
+            viewer.style.maxWidth = max_width + "px"
+            viewer.style.maxHeight = max_height + "px"
+        }
+
+        function openModal(img) {
+            viewer.src = img.src
+            camera_name.innerText = img.getAttribute("camera")
+            overlay.style.display = "block"
+        }
+
+        function closeModal(el) {
+            if (this.event.target != el) return
+            this.event.stopPropagation()
+            overlay.style.display = "none"
+        }
+
+        function showContent(parent) {
+            let drop
+            let content
+
+            for (var i = 0; i < parent.childNodes.length; ++i) {
+                let child = parent.childNodes[i]
+                if (child.tagName == "DROP")
+                    drop = child
+                if (child.tagName == "CONTENT")
+                    content = child
+            }
+
+            if (content != null && drop != null) {
+                let active = drop.getAttribute("active")
+                if (active == "false") {
+                    drop.innerText = "show less"
+                    drop.setAttribute("active", true)
+                    content.setAttribute("active", true)
+                } else {
+                    drop.innerText = "show more"
+                    drop.setAttribute("active", false)
+                    content.setAttribute("active", false)
+                }
+            }
+        }
+
+        recalcSize()
+    </script>
+</body>
+
+</html>

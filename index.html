@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Don't wanna toot my own horn, but...</title>
+
+    <!-- todo: move fonts.css as an import on main.css -->
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/social.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Primary Meta Tags -->
+    <title>Ironfacebuster - Software Developer</title>
+    <meta name="title" content="Ironfacebuster - Software Developer">
+    <meta name="description"
+        content="I'm a self-taught, independent software developer. Ironfacebuster is my name, open source is my game.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ironfacebuster.tk/">
+    <meta property="og:title" content="Ironfacebuster - Software Developer">
+    <meta property="og:description"
+        content="I'm a self-taught, independent software developer. Ironfacebuster is my name, open source is my game.">
+    <!-- TODO: GET A BETTER PICTURE FOR THE META TAGS!!!! -->
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/38227932">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.ironfacebuster.tk/">
+    <meta property="twitter:title" content="Ironfacebuster - Software Developer">
+    <meta property="twitter:description"
+        content="I'm a self-taught, independent software developer. Ironfacebuster is my name, open source is my game.">
+    <!-- TODO: GET A BETTER PICTURE FOR THE META TAGS!!!! -->
+    <meta property="twitter:image" content="https://avatars.githubusercontent.com/u/38227932">
+</head>
+
+<body>
+    <column downsize=false>
+        <bigblock nocolor nofilter style="user-select: none;">
+            <blocktitle>Ironfacebuster</blocktitle>
+            <blocksub style="margin-top: 10px;">@Ironfacebuster</blocksub>
+            <!-- youtube_social_icon_red.png -->
+
+            <social onclick="window.open('https\:\/\/github.com/Ironfacebuster')" title="My Github">
+                <img src="./img/github.svg">
+            </social>
+            <social onclick="window.open('https\:\/\/www.youtube.com/channel/UCajHS0pGmznB3pVDG6XHhvg')"
+                title="My Youtube Channel">
+                <img src="./img/youtube.webp">
+            </social>
+            <social onclick="window.open('https\:\/\/www.twitter.com/ironfacebuster')" title="My Twitter">
+                <img src="./img/twitter.webp">
+            </social>
+            <social onclick="window.open('https\:\/\/www.discord.gg/m7EZbC5tbw')" title="My Discord Server">
+                <img src="./img/discord.webp">
+            </social>
+        </bigblock>
+        <bigblock id="about_block"
+            onclick="ActivateScrollBox('about_scrollbox','about_block', document.getElementById('about_dropdown'))">
+            <blocktitle>About Me</blocktitle>
+            I am an independent software developer. I love to open source my projects, if I feel like they'll help
+            someone else. I have multiple years experience in various programming languages, and I'm always looking to
+            learn more.
+
+            <dropdown id="about_dropdown" active=false title="Show more">
+            </dropdown>
+        </bigblock>
+
+        <bigblock id="development">
+            <blocktitle>Development Machines</blocktitle>
+            I have Windows and MacOS machines, both of which I use for development.
+            <bigblock>
+                <blocktitle>Windows 11 Desktop</blocktitle>
+                The brunt of my workload is seen by my Windows 11 machine, which will handle almost anything I throw at
+                it.
+
+                <blocksub>Specs</blocksub>
+                <ul>
+                    <li>
+                        GPU: ASUS TUF 4070Ti Super
+                    </li>
+                    <li>
+                        CPU: AMD Ryzen 7 5800X
+                    </li>
+                    <li>
+                        RAM: 64GB DDR4 3200MHz
+                    </li>
+                    <li>
+                        Storage: 1TB Samsung 970 EVO, 4TB Seagate Barracuda
+                    </li>
+                </ul>
+
+            </bigblock>
+
+            <bigblock>
+                <blocktitle>Macbook Air</blocktitle>
+                A recent addition is my m1 Macbook Air, which I use for more personal projects. The excellent battery
+                life,
+                and surprisingly powerful CPU, make it a great choice for me.
+
+                <blocksub>Specs</blocksub>
+                <ul>
+                    <li>
+                        CPU: Apple M1 chip
+                    </li>
+                    <li>
+                        RAM: 8GB special flavor Apple ram!
+                    </li>
+                    <li>
+                        Storage: 512GB special flavor Apple SSD!
+                    </li>
+                </ul>
+
+            </bigblock>
+        </bigblock>
+
+        <bigblock id="peer_block"
+            onclick="ActivateScrollBox('peer_reviews','peer_block', document.getElementById('peer_dropdown'))">
+            <blocktitle>Peer Reviews</blocktitle>
+
+            I wanted to include some quotes from people I know, as a nice outside reference for me...
+            <br><br>
+            I asked, they delivered.
+
+            <dropdown id="peer_dropdown" active=false title="Show more">
+            </dropdown>
+        </bigblock>
+
+        <bigblock id="development">
+            <blocktitle>Other References</blocktitle>
+            If you're here, odds are you're interested in the documentation for Kepler, but why not check out my <a
+                href="folio.html">photography portfolio</a> as well?
+            <blocksub>
+                <!-- Kepler documentation -->
+            </blocksub>
+        </bigblock>
+    </column>
+
+    <scrollbox id="about_scrollbox" style="z-index: -1;">
+        <bigblock>
+            <blocktitle>JavaScript</blocktitle>
+            3+ years developing JavaScript, including server-side Node.js, and front-end code.
+
+            <blocksub>Public JavaScript Projects</blocksub>
+            <ul>
+                <li>
+                    <a href="https://github.com/Ironfacebuster/nodecraft">NodeCraft</a>; a Minecraft beta 1.6.6
+                    server,
+                    written in JavaScript and Node.js.
+                </li>
+                <li>
+                    <a href="https://github.com/Ironfacebuster/javablocks">JavaBlocks</a>; a node system,
+                    inspired
+                    by
+                    Blender shader nodes, intended to simplify programming in JavaScript.
+                </li>
+                <li>
+                    <a href="https://top.gg/bot/561675421364781069">CardsAgainstDiscord</a>; a once popular
+                    Discord
+                    bot
+                    that allowed you to play Cards Against Humanity with your friends!
+                </li>
+            </ul>
+        </bigblock>
+        <bigblock>
+            <blocktitle>C#</blocktitle>
+            4+ years using C# in Unity and .NET.
+
+            <blocksub>Public C# Projects</blocksub>
+            <ul>
+                <li>
+                    <a href="https://github.com/Ironfacebuster/kepler">Kepler</a>; a brand new Interpreted language,
+                    built in .NET.
+                </li>
+            </ul>
+
+        </bigblock>
+        <bigblock>
+            <blocktitle>Web</blocktitle>
+            2+ years developing web applications, including this website.
+
+            <blocksub>Public Web Projects</blocksub>
+            <ul>
+                <li>
+                    The site you're reading now, built from the ground up in HTML and CSS!
+                </li>
+                <li>
+                    <a href="http://chrome-uno.herokuapp.com/pages/home.html">Non-Copyright infringing Number Matching
+                        Card
+                        Game</a>; it's Uno.
+                </li>
+                <li>
+                    <a href="https://app.posted.network/">Posted</a>; a small social media site with an intended focus
+                    on discussion, rather than likes or subscribers.
+                </li>
+            </ul>
+        </bigblock>
+    </scrollbox>
+
+    <img src="./img/arrow_left.webp" id="scrollbox_arrow" class="arrow">
+
+
+    <scrollbox id="peer_reviews" hidden=true style="z-index: -1;">
+
+        <bigblock>
+            <blocktitle>"haha doxxed"</blocktitle>
+            <blocksub>A Guy</blocksub>
+        </bigblock>
+        <bigblock>
+            <blocktitle>"I promise I read all of your coding stuff I just have no idea what it means!!"</blocktitle>
+            <blocksub>Another Guy</blocksub>
+        </bigblock>
+        <bigblock>
+            <blocktitle>"pretty cool"</blocktitle>
+            <blocksub>College Student</blocksub>
+        </bigblock>
+        <bigblock>
+            <blocktitle>"Pog"</blocktitle>
+            <blocksub>Another College Student</blocksub>
+        </bigblock>
+        <bigblock>
+            <blocktitle>"He makes good computer stuff"</blocktitle>
+            <blocksub>Highschool Dropout</blocksub>
+        </bigblock>
+        <bigblock>
+            <blocktitle>"Jack of all trades, master of some."</blocktitle>
+            <blocksub>Jenna Taylia</blocksub>
+        </bigblock>
+    </scrollbox>
+
+    <div id="footer">
+        © Ironfacebuster 2021
+    </div>
+
+    <script>
+        let is_open = false;
+        let active_scrollbox = document.getElementById("about_scrollbox")
+        active_scrollbox.style.display = "none"
+        let active_bigblock = document.getElementById("about_block")
+        let main_col = document.getElementsByTagName("column")[0]
+        let last_toggle = null
+        let active_arrow = document.getElementById("scrollbox_arrow")
+        let arrow_x = "35.8%"
+
+        function ActivateScrollBox(id, parent, toggle) {
+            if (active_scrollbox != null && active_scrollbox.id != id && is_open) {
+                // return
+                last_toggle.setAttribute("active", false)
+                if (last_toggle != null) {
+                    last_toggle.setAttribute("active", false)
+                }
+                active_scrollbox.style.zIndex = -1
+                active_scrollbox.setAttribute("hidden", true)
+
+                is_open = true
+            } else is_open = !is_open;
+
+
+            active_scrollbox = document.getElementById(id)
+            active_bigblock = document.getElementById(parent)
+
+            toggle.setAttribute("active", is_open)
+            last_toggle = toggle
+
+            active_scrollbox.style.zIndex = is_open ? 10 : -1
+            active_arrow.style.zIndex = is_open ? 11 : -1
+
+            active_scrollbox.setAttribute("hidden", !is_open)
+        }
+
+        let footer = document.getElementById("footer")
+
+        setInterval(() => {
+            // footer.style.bottom = window.scrollY + "px"
+
+            if (active_scrollbox != null) {
+                active_scrollbox.style.display = "block"
+                active_scrollbox.setAttribute("hidden", !is_open)
+
+                if (last_toggle != null) {
+                    let padding = 15
+                    let top = active_scrollbox.getBoundingClientRect().top + window.scrollY + padding,
+                        bot = active_scrollbox.getBoundingClientRect().bottom + window.scrollY -
+                            getComputedStyle(active_arrow).height.replace("px", "") - padding
+
+                    let offset = last_toggle.getBoundingClientRect().top + window.scrollY
+                    offset = Math.max(top, Math.min(offset, bot))
+                    active_arrow.style.top = `${offset}px`
+
+                    let right = active_scrollbox.getBoundingClientRect().x
+                    active_arrow.style.right = (right) + "px"
+                    // active_arrow.style.right = arrow_x;
+                }
+            }
+
+            main_col.setAttribute("downsize", is_open)
+
+            // if(active_arrow )
+            active_arrow.setAttribute("hidden", !is_open)
+
+            if (is_open) {
+                let height = (active_bigblock.getBoundingClientRect().bottom - active_bigblock
+                    .getBoundingClientRect().top)
+
+                let top = (active_bigblock.getBoundingClientRect().top / 1.75) + window.scrollY
+                // clamp top to above the footer
+                let bot = top + height
+                top = Math.min(bot, (footer.getBoundingClientRect().top + window.scrollY) - (height * 4)) -
+                    height
+
+                // console.log(bot)
+                active_scrollbox.style.top = top + "px"
+            }
+        })
+    </script>
+</body>
+
+</html>
