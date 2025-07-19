@@ -1,0 +1,89 @@
+/*
+ *   Copyright (c) 2022 Ironfacebuster
+ *   All rights reserved.
+ *   License: Apache 2.0
+ */
+
+mid_dark {
+    display: block;
+
+    background-color: #0e1013;
+    padding: 15px 25px;
+    padding-bottom: 40px;
+
+    color: white;
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+
+    text-align: center;
+}
+
+mid_light {
+    display: block;
+
+    background-color: transparent;
+    padding: 15px 25px;
+
+    margin-top: 0px;
+    padding-bottom: 40px;
+
+    color: white;
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+
+    text-align: center;
+}
+
+navbar {
+    z-index: 100;
+    display: block;
+
+    background-color: #0e1013;
+
+    padding: 15px 10px;
+    width: calc(100% - 20px);
+
+    color: white;
+
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+
+    text-align: center;
+}
+
+navbar a {
+    font-size: larger;
+    margin: 5px;
+
+    color: white;
+    text-decoration: none;
+}
+
+navbar a[active] {
+    font-weight: bolder;
+}
+
+body {
+    overflow-y: auto;
+}
+
+.kepler-logo {
+    width: 50px;
+
+    transition: transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.kepler-logo:hover {
+    cursor: pointer;
+    transform: rotate(5deg) scale(1.2);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@media screen and (max-height: 450px), screen and (max-width: 500px) {
+    .kepler-logo {
+        width: 30px;
+    }
+}
+
+@media screen and (max-height: 350px), screen and (max-width: 240px) {
+    .kepler-logo {
+        display: none;
+    }
+}

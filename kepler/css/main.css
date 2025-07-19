@@ -1,0 +1,322 @@
+/*
+ *   Copyright (c) 2021 Ironfacebuster
+ *   All rights reserved.
+ *   License: Apache 2.0
+ */
+
+body {
+    background-color: #171a1f;
+    cursor: default;
+    overflow-x: hidden;
+
+    margin: 0px;
+
+    /* remove top margin & padding */
+    margin-top: 0;
+    padding-top: 0;
+    /* height & width */
+    max-width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    transition: transform 0.25s;
+}
+
+sidebar {
+    width: 15em;
+    z-index: 4;
+    /* height: 100%; */
+    background-color: #0e1013;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 15px;
+    padding-left: 10px;
+    overflow-x: hidden;
+    transition: width 0.25s, padding-left 0.25s, filter 0.25s;
+}
+
+sidebar[minimized="true"] {
+    width: 0px;
+    padding-left: 0px;
+    filter: brightness(5%);
+    transition: width 0.25s, padding-left 0.25s, filter 0.25s;
+}
+
+toggle {
+    z-index: 5;
+    display: block;
+    position: fixed;
+    border-radius: 5px;
+    background-color: #202327;
+    font-weight: bolder;
+    color: white;
+    user-select: none;
+    width: fit-content;
+    bottom: 1em;
+    padding: 18px 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+    transform: translateX(15.5em) scale(1);
+    transition: transform 0.25s;
+    cursor: pointer;
+}
+
+toggle[minimized="true"] {
+    transform: translateX(0);
+}
+
+arrow {
+    display: block;
+    width: 10px;
+    height: auto;
+    display: block;
+    transform: rotate(0deg);
+    transition: transform 0.25s;
+    content: url("../../img/arrow.webp");
+}
+
+toggle[minimized="true"] arrow {
+    transform: rotate(180deg);
+    transition: transform 0.25s;
+}
+
+list {
+    user-select: none;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* margin-top: 2em; */
+    /* margin-right: 0px; */
+}
+
+list name {
+    font-weight: bolder;
+    font-size: 30px;
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-left: 0.5em;
+    color: rgb(190, 190, 190);
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+}
+
+list item {
+    cursor: pointer;
+    margin-left: 2em;
+    font-size: 20px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+}
+
+list item[selected] {
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: -3px;
+    margin-bottom: -3px;
+}
+
+version {
+    display: block;
+    font-size: 15px;
+    padding-top: 1em;
+}
+
+content {
+    display: block;
+    height: 100vh;
+    overflow-y: auto;
+    max-width: 800px;
+    padding: 15px;
+    /* padding-right: calc(100vw - 800px); */
+    padding-top: 0;
+    color: white;
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+}
+
+section {
+    margin-bottom: 15px;
+}
+
+.loading {
+    z-index: 1;
+    color: white;
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 0.5em;
+    left: 0.5em;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #202327;
+    font-size: 30px;
+    transition: left 0.25s, right 0.25s;
+}
+
+spinner {
+    /* position: fixed; */
+    display: inline-block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    animation: rotating 1s linear infinite;
+}
+
+spinner[hidden] {
+    display: none;
+}
+
+/* Safari and Chrome */
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+}
+
+h1,
+h2 {
+    user-select: none;
+}
+
+content {
+    margin-bottom: 5em;
+    margin-left: 2em;
+
+    /* TODO: figure out why this isn't working */
+    /* --do-translate: calc(1px - max(0px, min(1px, (100vw - 500px) * 1000px))); */
+    /* --translate-distance: calc(var(--do-translate) * 15.5em); */
+    /* transform: translateX(var(--translate-distance)); */
+    /* transform: translateX(calc(clamp(0, (1px - max(0px, min(1px, 1 - (100vw - 500px) * 1000px))), 1) * 15.5em)); */
+    transition: transform 0.25s;
+}
+
+content[expanded] {
+    transform: translateX(0);
+    transition: transform 0.25s;
+}
+
+li[load] {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .loading {
+        right: 0.5em;
+        left: auto;
+        transition: left 0.25s, right 0.25s;
+    }
+
+    content {
+        margin: 0px;
+        padding: 0px;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 0;
+        padding-bottom: 0;
+        max-width: 100%;
+    }
+
+    sidebar {
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    sidebar {
+        width: calc(100vw - 10px);
+    }
+
+    toggle {
+        transform: none;
+        left: calc(100vw - (2em + 35px));
+        transition: left 0.25s;
+    }
+
+    toggle[minimized="true"] {
+        transform: none;
+        left: 0;
+        transition: left 0.25s;
+    }
+
+    content {
+        margin: 0px;
+        padding: 0px;
+        padding-left: 1em;
+        padding-right: 1em;
+        transform: translateX(calc(15em + 100vw));
+    }
+}
+
+@media screen and (max-width: 240px) {
+    content {
+        margin: 0px;
+        padding: 0px;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+        transform: translateX(calc(15em + 100vw));
+    }
+}
+
+type {
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 3px 6px;
+    background-color: #23272e;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

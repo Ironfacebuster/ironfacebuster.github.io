@@ -1,0 +1,127 @@
+<h1>Kepler Changelog</h1>
+
+<h2>a1.5</h2>
+<version>latest</version>
+<h3>Notes</h3>
+<ul>
+    <li>Large performance gains over a1.4, regarding conditionals and functions.</li>
+</ul>
+<h3>Additions</h3>
+<ul>
+    <li>Implemented internal modules system.</li>
+    <li>Added internal modules: "random", "input", "math", "objects", "filesystem", and "main" (loaded by default).</li>
+    <li>Added "else" and "elseif" statement to conditionals.</li>
+    <li>Made implicit casting error more detailed.</li>
+    <li>Added explicit type casting.</li>
+</ul>
+<h3>Changes</h3>
+<ul>
+    <li>Fixed improper type error types being in the wrong order.</li>
+    <li>Improved variable declaration detection.</li>
+    <li>Fixed error tracing.</li>
+</ul>
+
+
+<h2>a1.4</h2>
+<h3>Additions</h3>
+<ul>
+    <li>Added functions returning values.</li>
+    <li>Added string to Boolean casting.</li>
+    <li>Added string to number (Int, uInt, Float) casting.</li>
+    <li>Added a strict comparison, "==". This returns False if types are not equal.</li>
+    <li>Added argument checking, unrecognized argument warning, and invalid argument parameter errors.</li>
+    <li>Added string "greater than", "less than", etc. comparisons.</li>
+    <li>Added "malformed" string error message.</li>
+    <li>Added "throw" statement for controlling code flow and custom errors.</li>
+    <li>Added an unrecognized argument warning.</li>
+    <li>Added an error if an argument is passed with a value when it doesn't take any.</li>
+</ul>
+<h3>Changes</h3>
+<ul>
+    <li>Improved "and" and "or" operations.</li>
+    <li>Changed "equals" to be a non-strict comparison. This will attempt to cast the values to be like type, and
+        compare them.</li>
+    <li>Made releases single file deployments.</li>
+    <li>Fixed broken check for unexpected end of conditional.</li>
+    <li>Modified "--debug" behavior so that a "tree" is printed for the line by default, with an optional "verbose"
+        value providing more verbose debug information.</li>
+    <li>Implemented basic "headless" mode.</li>
+    <li>Temporarily disabled loading of static_values.kep</li>
+    <li>Moved default static values out of static_values.kep</li>
+</ul>
+
+
+<h2>a1.3.2</h2>
+<h3>Changes</h3>
+<ul>
+    <li>Fixed typo in "UNEXP_END_LOOP" error string.</li>
+    <li>Fixed nested interval not properly getting scoped variables.</li>
+    <li>Fixed edge case where intervals could not be nested within other intervals.</li>
+    <li>Fixed breaking intervals ceasing execution of entire script.</li>
+</ul>
+
+
+<h2>a1.3.1</h2>
+<h3>Additions</h3>
+<ul>
+    <li>Live interpretation no longer exits on normal errors.</li>
+    <li>Improved errors and error messages.</li>
+</ul>
+<h3>Changes</h3>
+<ul>
+    <li>Strings that are not closed now trigger EOL errors, rather than forming a string one character short.</li>
+    <li>Fixed edge case where an unclosed interval never triggers an unexpected EOP error.</li>
+</ul>
+
+
+<h2>a1.3</h2>
+<h3>Additions</h3>
+<ul>
+    <li>Added support for "and" and "or" operations when comparing booleans.</li>
+    <li>Added support for loading files without "--file".</li>
+    <li>Added (and improved) prime number checker example.</li>
+    <li>Added "breakout" keyword, to break out of intervals.</li>
+    <li>Added "every" interval method. This can be used to run code at regular intervals.</li>
+</ul>
+<h3>Deletions</h3>
+<ul>
+    <li>Removed .NET installer from Kepler installer.</li>
+</ul>
+<h3>Changes</h3>
+<ul>
+    <li>Improved support for inline block comments.</li>
+    <li>Changed file extension to .kep</li>
+    <li>(issue #3) Fixed string literals being improperly formed when followed by text without a whitespace in between.
+    </li>
+</ul>
+
+
+<h2>a1.2</h2>
+<h3>Additions</h3>
+<ul>
+    <li>Added static NaN value and type</li>
+    <li>Added basic if statement support</li>
+    <li>Added >, >=, &lt;, &lt;= as valid comparisons</li>
+    <li>Added modulo math operation</li>
+</ul>
+<h3>Changes</h3>
+<ul>
+    <li>Fixed overwriting variable types when directly assigning via another variable</li>
+    <li>Fixed inline block comments not actually working as comments (issue #2)</li>
+    <li>Fixed tabs being treated as normal characters, rather than spaces</li>
+</ul>
+
+
+<h2>a1.1</h2>
+<h3>Additions</h3>
+<ul>
+    <li>Added automatic typecasting in operations</li>
+    <li>Added static values</li>
+</ul>
+
+
+<h2>a1</h2>
+<h3>Notes</h3>
+<ul>
+    <li>Initial alpha release</li>
+</ul>

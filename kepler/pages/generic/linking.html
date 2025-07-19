@@ -1,0 +1,93 @@
+<h1>Linking</h1>
+
+In order to import libraries or other Kepler files, you have to link them.<br>
+Linking a file tells Kepler to load the file and import its contents, like variables and functions.<br><br>
+
+<section>
+    <h2>Importing a library</h2>
+    Kepler provides a few internal libraries to use, which can be imported into your code<br>
+    To import an internal library, you need to link the library via its module name.<br><br>
+
+    For example, this snippet imports the math library:
+    <slabel>linking.kep</slabel>
+    <code>
+
+        <line>
+            <count>1</count>
+            <operator>start</operator>
+            <internal>Header</internal>
+        </line>
+        <line>
+            <count>2</count>
+            <pre>    </pre>
+            <keyword>link</keyword>
+            <string>"math"</string>
+        </line>
+        <line>
+            <count>3</count>
+            <operator>end</operator>
+            <internal>Header</internal>
+        </line>
+
+        <line>
+            <count>4</count>
+        </line>
+        <line>
+            <count>5</count>
+            <variable>sin_of_twenty_three</variable>
+            <assign>is</assign>
+            <operator>call</operator>
+            <function>sin</function>
+            <operator>with</operator>
+            <string>23.0</string>
+            <operator>as</operator>
+            <operator>value</operator>
+        </line>
+
+        <line>
+            <count>6</count>
+            <keyword>print</keyword>
+            <variable>sin_of_twenty_three</variable>
+        </line>
+    </code>
+
+    <slabel>output</slabel>
+    <output>
+        -0.846220404175171
+    </output>
+</section>
+
+<section>
+    <h2>Linking Custom Files</h2>
+    To link a file you made, all you need to do is link a path to the file in the Header of your script.<br><br>
+
+    For example, this snippet imports a file named "mylibrary.kep":
+
+    <slabel>linking.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <operator>start</operator>
+            <internal>Header</internal>
+        </line>
+        <line>
+            <count>2</count>
+            <pre>    </pre>
+            <keyword>link</keyword>
+            <string>"./mylibrary.kep"</string>
+        </line>
+        <line>
+            <count>3</count>
+            <operator>end</operator>
+            <internal>Header</internal>
+        </line>
+    </code>
+
+    As a result, the code within "mylibrary.kep" is run, and the variables and functions defined in it are available to
+    the rest of your code.
+
+    <slabel>output</slabel>
+    <output>
+        This was printed from mylibrary.kep!
+    </output>
+</section>

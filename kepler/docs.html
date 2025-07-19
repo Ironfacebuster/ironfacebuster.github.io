@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- webp because of that sweet sweet size -->
+    <link rel="icon" type="image/webp" href="../kepler/kepler_logo.webp" sizes="128x128" />
+    <!-- png if webp isn't supported -->
+    <link rel="icon" type="image/png" href="../kepler/kepler_logo.png" sizes="128x128" />
+    <!-- backup -->
+    <link rel="icon" type="image/png" href="../kepler/kepler32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../kepler/kepler256x256.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../css/syntax.css">
+
+    <!-- kepler exclusive styling -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/functions.css">
+    <link rel="stylesheet" href="./css/tables.css">
+
+    <!-- navbar things -->
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script defer>
+        function ScrollToTop() {
+            document.querySelector('content').scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        let px_to_int = (px) => {
+            return parseInt(px.replace("px", ""))
+        }
+
+        let get_nav_height = () => {
+            let nav_style = getComputedStyle(document.getElementById("navbar"))
+
+            let new_height = [nav_style.height, nav_style.marginTop, nav_style.marginBottom, nav_style
+                .paddingTop, nav_style.paddingBottom
+            ].map((a) => {
+                return px_to_int(a)
+            }).reduce((a, b) => a + b)
+
+            return new_height
+        }
+
+        window.addEventListener("load", () => {
+            let nav = document.getElementById("navbar")
+            let spacer = document.getElementById("nav_spacer")
+
+            let calc_heights = () => {
+
+                let new_height = get_nav_height()
+
+                spacer.style.height = new_height + "px"
+
+                let sidebar = document.querySelector('sidebar')
+                sidebar.style.height =
+                    `calc(100% - ${new_height}px)`
+                sidebar.style.marginTop = `${new_height}px`
+
+                let content = document.querySelector('content')
+
+                // check if device is mobile or width is less than 800px
+                if (window.matchMedia("(pointer: coarse").matches || window.innerWidth <= 800)
+                    content.style.height = `calc(100% - ${new_height}px - 1px)`
+                else
+                    content.style.height = `calc(100% - ${new_height}px - 16px)`
+            }
+
+            window.addEventListener("scroll", () => {
+                // fix navbar to top of screen
+                if (window.scrollY > 0) {
+                    nav.style.position = "fixed"
+                    nav.style.top = "0px"
+                    spacer.style.display = "block"
+                } else {
+                    nav.style.position = "static"
+                    spacer.style.display = "none"
+                }
+            })
+
+            screen.orientation.addEventListener("change", calc_heights)
+            window.addEventListener("orientationchange", calc_heights)
+            window.addEventListener("resize", calc_heights)
+            calc_heights()
+        })
+    </script>
+
+    <title>Kepler Documentation</title>
+</head>
+
+<body>
+    <toggle onclick="ToggleSidebar(this)">
+        <arrow>
+    </toggle>
+    <div class="loading" style="position: fixed;" hidden>
+        <spinner title="Loading...">&#x2B6E;</spinner> Loading...
+    </div>
+
+    <div id="nav_spacer" style="height: 122px; display: none;"></div>
+    <navbar style="position: static;" id="navbar">
+        <div style="margin-bottom:7.5px;">
+            <img class="kepler-logo" src="../kepler/kepler_logo.png" alt="Kepler!" onclick="ScrollToTop()">
+        </div>
+        <div>
+            <a href="../kepler">home</a>
+            <!-- <a href="../kepler/docs">about</a> -->
+            <a active>docs</a>
+        </div>
+    </navbar>
+
+    <sidebar>
+        <list style="margin-bottom: 5em;">
+            <section>
+                <name>Home</name>
+                <item load="./pages/home/intro.html">Introduction</item>
+            </section>
+            <section>
+                <name>Types</name>
+                <item load="./pages/types/boolean.html">Boolean</item>
+                <item load="./pages/types/float.html">Float</item>
+                <item load="./pages/types/int.html">Int</item>
+                <item load="./pages/types/uint.html">uInt</item>
+                <item load="./pages/types/string.html">String</item>
+                <item load="./pages/types/nan.html">NaN</item>
+            </section>
+            <section>
+                <name>Other</name>
+                <item load="./pages/generic/operations.html">Operations</item>
+                <item load="./pages/generic/logic.html">Logic</item>
+                <item load="./pages/generic/comparisons.html">Comparisons</item>
+                <item load="./pages/generic/linking.html">Linking</item>
+            </section>
+            <section>
+                <name>Libraries</name>
+                <item load="./pages/libraries/filesystem.html">filesystem</item>
+                <item load="./pages/libraries/input.html">input</item>
+                <item load="./pages/libraries/main.html">main</item>
+                <item load="./pages/libraries/math.html">math</item>
+                <item load="./pages/libraries/objects.html">objects</item>
+                <item load="./pages/libraries/random.html">random</item>
+                <item load="./pages/libraries/time.html">time</item>
+                <item load="./pages/libraries/utilities.html">utilities</item>
+            </section>
+            <section>
+                <name>Miscellaneous</name>
+                <item load="./pages/misc/args.html">Arguments</item>
+                <item load="./pages/misc/changelog.html">Changelog</item>
+            </section>
+        </list>
+    </sidebar>
+
+    <content style="margin-left: auto; margin-right: auto;">
+
+        <version>Kepler v1a1.5</version>
+        <span id="content-body">
+            <h1>Welcome to the Kepler docs!</h1>
+            If you're brand new to Kepler, click the "Introduction" option on the left to get started.<br><br>
+            Click the arrow on the bottom left to open the navigation sidebar.<br><br>
+        </span>
+
+        <!-- remove this -->
+        <!-- remove this -->
+
+        <!-- spacing at the bottom -->
+        <div style="height: 50px;"></div>
+        <slabel style="margin-left: 0;">©2022 - 2025 Ironfacebuster</slabel>
+    </content>
+</body>
+
+<script>
+    let main_content = document.getElementById("content-body");
+
+    const sidebar = document.querySelector('sidebar')
+
+    let button = document.getElementsByTagName("toggle")[0]
+
+    const HideSidebar = () => {
+        button.setAttribute("minimized", true)
+        sidebar.setAttribute("minimized", true)
+        main_content.parentNode.setAttribute("expanded", true)
+    },
+        ShowSidebar = () => {
+            button.removeAttribute("minimized")
+            sidebar.setAttribute("minimized", false)
+            main_content.parentNode.removeAttribute("expanded")
+        }
+
+    function ToggleSidebar() {
+        let minimized = sidebar.getAttribute('minimized') == "true"
+        console.log(minimized)
+
+        if (!minimized)
+            HideSidebar()
+        else
+            ShowSidebar()
+    }
+
+    let spinner = document.getElementsByClassName("loading")[0]
+    let current_page = "null"
+
+    function TryLoad(item, pushstate = true) {
+        let file = item.getAttribute('load')
+
+        if (file == current_page) return
+        document.title = `Loading ${item.innerText} - Kepler Docs`
+
+        LoadItem(file).then(() => {
+
+            document.title = `${item.innerText} - Kepler Docs`
+
+            if (window.innerWidth <= 330)
+                HideSidebar()
+
+            if (pushstate)
+                history.pushState({
+                    target: file,
+                    title: document.title
+                }, `Kepler - ${item.innerText}`, `?target=${item.innerText}`)
+
+        }).catch((err) => {
+            console.log(err)
+            ShowError()
+        })
+    }
+
+    window.onpopstate = function (event) {
+        if (event.state.target == null) return
+
+        try {
+            LoadItem(event.state.target)
+            document.title = event.state.title
+        } catch (err) {
+            console.log(err)
+            ShowError()
+        }
+    }
+
+    window.addEventListener("load", (e) => {
+        if (window.innerWidth < 800) HideSidebar()
+
+        let params = new URLSearchParams(window.location.search)
+        if (!params.has("target")) return
+
+        let target = params.get("target")
+
+        let items = document.getElementsByTagName("item")
+        for (var i = 0; i < items.length; ++i) {
+            if (items[i].innerText == target) {
+                TryLoad(items[i], false)
+                break
+            }
+        }
+    })
+
+    async function LoadItem(file) {
+        return new Promise((res, rej) => {
+
+            spinner.removeAttribute("hidden")
+            // main_content.innerHTML = ""
+
+            let items = document.getElementsByTagName("item")
+            for (var i = 0; i < items.length; ++i) {
+                if (items[i].getAttribute("load") == file)
+                    items[i].setAttribute("selected", true)
+                else
+                    items[i].removeAttribute("selected")
+            }
+
+            current_page = file
+
+            fetch(file.toString()).then(res => {
+                return res.text()
+            }).then(html => {
+                SetMainContent(html)
+                res()
+            }).catch(err => {
+                console.log(err)
+                // fallback to xhttp
+                xhttp = new XMLHttpRequest()
+
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            SetMainContent(this.responseText, file)
+                            res()
+                        }
+                        if (this.status == 404) {
+                            SetMainContent(this.responseText, file)
+                            rej(this.responseText)
+                        }
+                    }
+                }
+                xhttp.open("GET", file, true)
+
+                xhttp.send()
+            })
+
+        })
+    }
+
+    function SetMainContent(html) {
+        main_content.innerHTML = html
+        SetTypeLinks()
+        spinner.setAttribute("hidden", true)
+
+        ScrollToTop()
+    }
+
+    function SetTypeLinks() {
+        let types = document.getElementsByTagName("type")
+
+        for (var i = 0; i < types.length; ++i) {
+            let type = types[i]
+
+            if (!type.hasAttribute("load")) {
+                let name = type.innerText.toLowerCase()
+
+                // console.log(`./pages/types/${name}.html`)
+                type.setAttribute("load", `./pages/types/${name}.html`)
+                type.addEventListener("click", () => {
+                    TryLoad(type)
+                })
+            }
+        }
+    }
+
+    let items = document.getElementsByTagName("item")
+    for (var i = 0; i < items.length; ++i) {
+        const item = items[i]
+        item.addEventListener("click", () => {
+            TryLoad(item)
+        })
+    }
+
+    let ShowError = () => {
+        document.title = `Error - Kepler Docs`
+        spinner.setAttribute("hidden", true)
+        main_content.innerHTML = "An error occurred while trying to load this page."
+    }
+</script>
+
+</html>

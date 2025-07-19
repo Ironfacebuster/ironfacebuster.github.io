@@ -1,0 +1,53 @@
+<h1>uInt</h1>
+uInts are unsigned integers, which means they cannot be negative.<br>
+As a result, this means unsigned integers have a higher upward bound than (signed) integers.<br><br>
+
+The following is an example of creating a variable with a uInt type:
+<code>
+    <line>
+        <count>1</count>
+        <variable>myuInt</variable>
+        <assign>is</assign>
+        <keyword>u274</keyword>
+    </line>
+</code>
+
+<h3>Casting Table</h3>
+This table shows the types that can cast to a uInt.<br>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Castable</th>
+    </tr>
+    <tr>
+        <td>
+            <type>Boolean</type>
+        </td>
+        <td>Yes.</td>
+    </tr>
+    <tr>
+        <td>
+            <type>Float</type>
+        </td>
+        <td>Yes.</td>
+    </tr>
+    <tr>
+        <td>
+            <type>Int</type>
+        </td>
+        <td>Yes.</td>
+    </tr>
+    <tr>
+        <td>
+            <type>String</type>
+        </td>
+        <td>Yes, if the value of the string is a valid number.</td>
+    </tr>
+    <tr>
+        <td>
+            <type>NaN</type>
+        </td>
+        <td>No.</td>
+    </tr>
+</table>

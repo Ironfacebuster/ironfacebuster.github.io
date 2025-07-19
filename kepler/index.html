@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- webp because of that sweet sweet size -->
+    <link rel="icon" type="image/webp" href="../kepler/kepler_logo.webp" sizes="128x128" />
+    <!-- png if webp isn't supported -->
+    <link rel="icon" type="image/png" href="../kepler/kepler_logo.png" sizes="128x128" />
+    <!-- backup -->
+    <link rel="icon" type="image/png" href="../kepler/kepler32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../kepler/kepler256x256.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../css/syntax.css">
+
+    <!-- kepler exclusive styling -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- navbar things -->
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script>
+        function ScrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
+
+        let px_to_int = (px) => {
+            return parseFloat(px.replace("px", ""))
+        }
+
+        let get_nav_height = () => {
+            let nav_style = getComputedStyle(document.getElementById("navbar"))
+
+            let new_height = [nav_style.height, nav_style
+                .paddingTop, nav_style.paddingBottom
+            ].map((a) => {
+                return px_to_int(a)
+            }).reduce((a, b) => a + b)
+
+            return new_height
+        }
+
+        window.addEventListener("load", () => {
+            let nav = document.getElementById("navbar")
+            let spacer = document.getElementById("nav_spacer")
+
+            let calc_heights = () => {
+
+                let new_height = get_nav_height()
+
+                spacer.style.height = new_height + "px"
+            }
+            // content.style.marginTop = `${new_height}px`
+
+            window.addEventListener("scroll", () => {
+                // fix navbar to top of screen
+                if (window.scrollY > 0) {
+                    nav.style.position = "fixed"
+                    nav.style.top = "0px"
+                    spacer.style.display = "block"
+                } else {
+                    nav.style.position = "static"
+                    spacer.style.display = "none"
+                }
+            })
+
+            screen.orientation.addEventListener("change", calc_heights)
+            window.addEventListener("orientationchange", calc_heights)
+            window.addEventListener("resize", calc_heights)
+            calc_heights()
+        })
+    </script>
+
+    <style>
+        h3 {
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 0px;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            min-width: 400px;
+            max-width: 650px;
+        }
+
+        li {
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+        }
+
+        li img {
+            width: 100%;
+        }
+
+        @media screen and (max-width:400px) {
+            ul {
+                width: 90%;
+                min-width: 0px;
+            }
+        }
+    </style>
+
+    <title>Kepler</title>
+</head>
+
+<body>
+    <div id="nav_spacer" style="height: 122px; display: none;"></div>
+    <navbar style="position: static;" id="navbar">
+        <div style="margin-bottom:7.5px;">
+            <img class="kepler-logo" src="../kepler/kepler_logo.png" alt="Kepler!" onclick="ScrollToTop()">
+        </div>
+        <div>
+            <a active>home</a>
+            <!-- <a href="../kepler/about">about</a> -->
+            <a href="../kepler/docs">docs</a>
+        </div>
+    </navbar>
+
+    <mid_light>
+        <h2>What is Kepler?</h2>
+        Kepler is a brand new language, designed to be easy-to-use and <a
+            href="../kepler/docs?target=Introduction">quick to learn</a>
+    </mid_light>
+
+    <mid_dark>
+        <h2>Features</h2>
+        <!-- bullet point list -->
+        <ul>
+            <li>
+                <h3>English-like syntax</h3>
+                <section>
+                    Write code like you're speaking English
+                </section>
+            </li>
+            <li>
+                <h3>Easy-to-import libraries</h3>
+                <section>
+                    Expand Kepler's capabilities with libraries, from <a href="../kepler/docs?target=input">input</a> to
+                    <a href="../kepler/docs?target=objects">objects</a>
+                </section>
+            </li>
+            <li>
+                <h3>Verbose errors and stack traces</h3>
+
+            </li>
+            <li>
+                <h3>Simple data types, with implicit and explicit casting</h3>
+                A list of data types, as well as castability, is available in the <a href="../kepler/docs">docs</a>
+            </li>
+            <li>
+                <h3>Examples</h3>
+                Example files with varying complexity are included in the installer
+            </li>
+        </ul>
+    </mid_dark>
+
+    <mid_light>
+        <!-- <h2>Sources</h2> -->
+        <div style="height: 40px;"></div>
+        <section>
+            Written in C# and built with <a href="https://dotnet.microsoft.com/en-us/" target="_blank"
+                rel="noreferrer noopener">.NET</a>
+        </section>
+        <section>
+            Made with 💖 by <a href="https://github.com/Ironfacebuster" target="_blank"
+                rel="noreferrer noopener">Ironfacebuster</a>
+        </section>
+    </mid_light>
+
+    <mid_dark>
+        <h2>Downloads</h2>
+
+        <h3>Latest Stable</h3>
+        <a
+            href="https://github.com/Ironfacebuster/kepler-interpreter/releases/download/v1.0-alpha.1.5/kepler_v1a1.5.exe">Kepler
+            Alpha 1.5</a>
+
+        <!-- TODO: fix nightly building -->
+        <!-- <h3>Nightly</h3>
+        <div>Warning: nightly builds can be unstable!</div>
+        <a href="">Kepler Nightly</a> -->
+
+        <h3>Source</h3>
+        <a href="https://github.com/Ironfacebuster/kepler-interpreter">GitHub repository</a>
+    </mid_dark>
+
+    <mid_light>
+        <slabel>©2022 - 2025 Ironfacebuster</slabel>
+    </mid_light>
+</body>

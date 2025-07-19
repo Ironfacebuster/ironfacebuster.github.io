@@ -1,0 +1,264 @@
+<h1>math</h1>
+
+Kepler is really good at math, but unfortunately there are some things it can't do.<br>
+To make up for this, the math library provides various useful math functions.<br><br>
+
+<section>
+    <h4>Static Values</h4>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>
+                <type>Float</type>
+            </td>
+            <td>2.7182818284590451</td>
+        </tr>
+        <tr>
+            <td>PI</td>
+            <td>
+                <type>Float</type>
+            </td>
+            <td>3.141592653589793</td>
+        </tr>
+        <tr>
+            <td>TAU</td>
+            <td>
+                <type>Float</type>
+            </td>
+            <td>6.2831853071795862</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <libfunct>
+        <h3>sin</h3>
+        <p>Calculate the sine of a number.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>
+                        <type>Float</type>
+                    </td>
+                    <td>The float used in the calculation.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>Float</type> The sine of the provided value.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>cos</h3>
+        <p>Calculate the cosine of a number.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>
+                        <type>Float</type>
+                    </td>
+                    <td>The float used in the calculation.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>Float</type> The cosine of the provided value.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>round</h3>
+        <p>Round a float to the nearest decimal point.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>
+                        <type>Float</type>
+                    </td>
+                    <td>The float to round.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>Int</type> The rounded value.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>ceil</h3>
+        <p>Round a float upwards.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>
+                        <type>Float</type>
+                    </td>
+                    <td>The float to round.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>Int</type> The rounded value.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>floor</h3>
+        <p>Round a float downwards.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>
+                        <type>Float</type>
+                    </td>
+                    <td>The float to round.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>Int</type> The rounded value.
+        </section>
+    </libfunct>
+
+    <!-- hey -->
+    <!-- this isn't fully implemented yet -->
+    <!-- <libfunct>
+        <h3>abs</h3>
+        <p>Get the absolute value of a number.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>
+                        Any
+                    </td>
+                    <td>The number to get the absolute value of.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>Int</type> The absolute value.
+        </section>
+    </libfunct> -->
+
+    <libfunct>
+        <h3>to_binary</h3>
+        <p>Convert an integer to its binary representation.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>
+                        <type>Int</type>
+                    </td>
+                    <td>The number to convert.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>String</type> The converted binary string.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>from_binary</h3>
+        <p>Convert a binary string to its integer representation.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>
+                        <type>String</type>
+                    </td>
+                    <td>The binary string to convert.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>Int</type> The converted int.
+        </section>
+    </libfunct>
+</section>

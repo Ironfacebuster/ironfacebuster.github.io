@@ -1,0 +1,213 @@
+<h1>Introduction</h1>
+<section>
+    <h2>What is Kepler?</h2>
+    Kepler is an interpreted language, with a special syntax: it's designed to be like talking in English!<br><br>
+    Kepler can do many things, and that list is always growing!<br>
+    Here's an example of a Hello World program:
+
+    <slabel>hello_world.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <keyword>print</keyword>
+            <string>"Hello, world!"</string>
+        </line>
+    </code>
+    <slabel>output</slabel>
+    <output>
+        Hello, world!
+    </output>
+    It really is that easy!
+</section>
+<section>
+    <h2>Getting Sophisticated</h2>
+    Kepler can do more than just print a string!<br>
+    For example, you can define variables, and use them in your code:
+
+    <slabel>hello_var.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <variable>name</variable>
+            <assign>is</assign>
+            <string>"I'm a variable!"</string>
+        </line>
+        <line>
+            <count>2</count>
+        </line>
+        <line>
+            <count>3</count>
+            <keyword>print</keyword>
+            <variable>name</variable>
+        </line>
+    </code>
+    <slabel>output</slabel>
+    <output>
+        I'm a variable!
+    </output>
+
+    As they always say, Function follows Variable.<br><br>
+
+    In essence, functions are blocks of code that can be run multiple times, with different parameters.<br><br>
+
+    In order to write a function, you need to define the function and its parameters in the code Header.<br>
+    This entails telling Kepler the Type your function returns (even if it doesn't return one) and the name and type of
+    its parameters</br>
+
+    For example, you can define a function that takes a string and prints it:
+    <slabel>funct_print.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <operator>start</operator>
+            <internal>Header</internal>
+        </line>
+        <line>
+            <count>2</count>
+            <pre>    </pre>
+            <comment>!-- Define the function --!</comment>
+        </line>
+        <line>
+            <count>3</count>
+            <pre>    </pre>
+            <function>printer</function>
+            <operator>returns</operator>
+            <operator>Int</operator>
+        </line>
+        <line>
+            <count>4</count>
+            <pre>    </pre>
+            <comment>!-- Define the "input" parameter --!</comment>
+        </line>
+        <line>
+            <count>5</count>
+            <pre>    </pre>
+            <function>printer</function>
+            <operator>uses</operator>
+            <operator>Int</operator>
+            <operator>as</operator>
+            <operator>input</operator>
+        </line>
+
+        <line>
+            <count>6</count>
+            <operator>end</operator>
+            <internal>Header</internal>
+        </line>
+        <line>
+            <count>7</count>
+        </line>
+        <line>
+            <count>8</count>
+            <operator>start</operator>
+            <function>printer</function>
+        </line>
+        <line>
+            <count>9</count>
+            <pre>    </pre>
+            <keyword>print</keyword>
+            <variable>input</variable>
+        </line>
+        <line>
+            <count>10</count>
+            <operator>end</operator>
+            <function>printer</function>
+        </line>
+        <line>
+            <count>11</count>
+        </line>
+        <line>
+            <count>12</count>
+            <comment>!-- run (call) the function --!</comment>
+        </line>
+        <line>
+            <count>13</count>
+            <operator>call</operator>
+            <function>printer</function>
+            <operator>with</operator>
+            <string>"This is a function that prints a string!"</string>
+            <operator>as</operator>
+            <operator>input</operator>
+        </line>
+    </code>
+    <slabel>output</slabel>
+    <output>
+        This is a function that prints a string!
+    </output>
+</section>
+<section>
+    If you thought to yourself, "what's a string?" This next section is for you!<br><br>
+    <h2>Kepler Types</h2>
+    Kepler only has a couple of types of data:
+    <ul>
+        <li onclick="TryLoad(this)" load="./pages/types/boolean.html">Boolean</li>
+        <li onclick="TryLoad(this)" load="./pages/types/float.html">Float</li>
+        <li onclick="TryLoad(this)" load="./pages/types/int.html">Int</li>
+        <li onclick="TryLoad(this)" load="./pages/types/uint.html">uInt</li>
+        <li onclick="TryLoad(this)" load="./pages/types/string.html">String</li>
+    </ul>
+
+    Types can be changed to others types via "explicit casting".<br>
+    <slabel>explicit_casting.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <variable>int</variable>
+            <assign>is</assign>
+            <keyword>1</keyword>
+        </line>
+        <line>
+            <count>2</count>
+        </line>
+        <line>
+            <count>3</count>
+            <keyword>print</keyword>
+            <variable>int</variable>
+            <operator>cast</operator>
+            <operator>Float</operator>
+        </line>
+    </code>
+    <slabel>output</slabel>
+    <output>
+        1.0
+    </output>
+
+    You can also use "implicit casting", or implied casting, to change the type of a variable automatically.<br>
+    This is done when two values of different types are compared to each other.<br>
+    <slabel>implicit_casting.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <variable>int</variable>
+            <assign>is</assign>
+            <keyword>100.0</keyword>
+        </line>
+        <line>
+            <count>2</count>
+        </line>
+        <line>
+            <count>3</count>
+            <comment>!-- add an Int to a Float --!</comment>
+        </line>
+        <line>
+            <count>4</count>
+            <keyword>print</keyword>
+            <variable>int</variable>
+            <operator>+</operator>
+            <keyword>1</keyword>
+        </line>
+    </code>
+    <slabel>output</slabel>
+    <output>
+        101.0
+    </output>
+
+    Implicit casting can lead to errors, so always make sure your data is sound before using it!<br>
+
+    <slabel>oops!</slabel>
+    <output>
+        <error>
+            Type Error: Unable to implicitly cast type String to Int!
+        </error>
+    </output>
+</section>

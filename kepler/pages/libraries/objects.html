@@ -1,0 +1,180 @@
+<h1>objects</h1>
+
+Kepler has no built-in support for object oriented programming. However, it's possible to include the objects library to
+emulate some of the functionality.<br><br>
+
+<section>
+    <libfunct>
+        <h3>object_create</h3>
+        <p>Creates a new object.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            None.
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>String</type> The object's ID.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>object_delete</h3>
+        <p>Delete an object.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>
+                        <type>String</type>
+                    </td>
+                    <td>The ID of the object.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            Nothing.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>object_exists</h3>
+        <p>Check if an object exists.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>
+                        <type>String</type>
+                    </td>
+                    <td>The ID of the object.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>Boolean</type> True if the object exists, false otherwise.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>object_get</h3>
+        <p>Get a key/value pair from an object.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>
+                        <type>String</type>
+                    </td>
+                    <td>The ID of the object.</td>
+                </tr>
+                <tr>
+                    <td>key</td>
+                    <td>
+                        <type>String</type>
+                    </td>
+                    <td>The key of the data you want to get.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            The data associated with the key.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>object_set</h3>
+        <p>Set a key/value pair for an object.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>
+                        <type>String</type>
+                    </td>
+                    <td>The ID of the object.</td>
+                </tr>
+                <tr>
+                    <td>key</td>
+                    <td>
+                        <type>String</type>
+                    </td>
+                    <td>The key of the data you want to set.</td>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>Any</td>
+                    <td>The data to associate with the key.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            Nothing.
+        </section>
+    </libfunct>
+
+    <libfunct>
+        <h3>object_keys</h3>
+        <p>Get a list of the keys an object has.</p>
+
+        <section>
+            <h4>Required Parameters</h4>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>
+                        <type>String</type>
+                    </td>
+                    <td>The ID of the object.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h4>Returns</h4>
+            <type>String</type> The keys of the object, separated by commas.
+        </section>
+    </libfunct>
+</section>

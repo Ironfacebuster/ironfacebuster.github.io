@@ -1,0 +1,25 @@
+/*
+ *   Copyright (c) 2021 Ironfacebuster
+ *   All rights reserved.
+ *   License: Apache 2.0
+ */
+
+social {
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 100%;
+    background-color: white;
+    display: inline-block;
+    /* margins */
+    margin-top: 25px;
+    margin-right: 10px;
+    /* size */
+    width: 32px;
+    height: 32px;
+}
+
+social img {
+    width: 30px;
+    height: auto;
+    margin: 1px;
+}

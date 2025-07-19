@@ -1,0 +1,153 @@
+/*
+ *   Copyright (c) 2021 Ironfacebuster
+ *   All rights reserved.
+ *   License: Apache 2.0
+ */
+
+slabel {
+    user-select: none;
+    width: fit-content;
+    display: block;
+    color: #2c313c;
+    font-family: "Consolas", monospace;
+    font-size: 14px;
+    margin: 2em;
+    margin-bottom: 0px;
+}
+
+slabel:hover {
+    color: #495162;
+}
+
+code {
+    border-radius: 5px;
+    display: block;
+    background-color: #23272e;
+    color: white;
+    max-width: 45em;
+    padding: 1em;
+    margin: 2em;
+    font-family: "Consolas", monospace;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+code * {
+    font-size: 14px;
+    margin-right: 0.5em;
+}
+
+code line {
+    display: block;
+    width: 100%;
+    font-size: 0;
+}
+
+code line:hover {
+    background-color: #2c313c;
+    cursor: default;
+}
+
+code line count {
+    cursor: default;
+    user-select: none;
+    display: inline-block;
+    color: #495162;
+    padding-right: 1em;
+    text-align: right;
+    width: 2em;
+    margin-right: 0;
+}
+
+code line:hover count {
+    background-color: #23272e;
+    color: #abb2bf;
+}
+
+code * {
+    display: inline;
+    cursor: text;
+}
+
+code tab {
+    user-select: all;
+    display: inline-block;
+    width: 1.5em;
+}
+
+code variable {
+    color: #e06c75;
+}
+
+code function {
+    color: #61afef;
+}
+
+code assign {
+    color: #56b6c2;
+}
+
+code compare {
+    color: #56b6c2;
+}
+
+code operator {
+    color: #c678dd;
+}
+
+code keyword {
+    color: #d19a66;
+}
+
+code internal {
+    color: #e5c07b;
+}
+
+/* static types */
+
+code number {
+    color: #d19a66;
+}
+
+code string {
+    color: #98c379;
+}
+
+code bool {
+    color: #d19a66;
+}
+
+/* comments */
+
+code comment {
+    color: #7f848e;
+}
+
+/* output things */
+
+output {
+    border-radius: 5px;
+    display: block;
+    background-color: #23272e;
+    color: rgb(141, 141, 141);
+    max-width: 45em;
+    padding: 1em;
+    margin: 2em;
+    font-family: "Consolas", monospace;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+output error {
+    color: rgb(255, 97, 110);
+}
+
+/* media queries */
+
+@media screen and (max-width: 800px) {
+    output,
+    code {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}

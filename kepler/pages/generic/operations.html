@@ -1,0 +1,381 @@
+<h1>Operations</h1>
+
+Kepler provides a number of operations that can be performed to manipulate values.<br>
+All operations, unless explicitly stated, will return a type of the first parameter of the operation.<br>
+
+<section>
+    <h2>Addition</h2>
+    Add two values together.<br><br>
+    The operator for addition is <operator>+</operator>.<br>
+
+    The following is an example of how to use the addition operator:
+    <slabel>add.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <keyword>print</keyword>
+            <keyword>1</keyword>
+            <operator>+</operator>
+            <keyword>1</keyword>
+        </line>
+    </code>
+
+    <slabel>output</slabel>
+    <output>
+        2
+    </output>
+
+    <h3>Compatibility Table</h3>
+    Some operations may not be available on all types, or will operate differently depending on the type.<br>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Compatible</th>
+        </tr>
+        <tr>
+            <td>
+                <type>Boolean</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Float</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Int</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>uInt</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>String</type>
+            </td>
+            <td>Yes, however, doing so will result in a new string with the content appended or prepended.</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Subtraction</h2>
+    Get the difference between two values.<br><br>
+    The operator for subtraction is <operator>-</operator>.<br>
+
+    The following is an example of how to use the subtraction operator:
+    <slabel>subtract.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <keyword>print</keyword>
+            <keyword>1005</keyword>
+            <operator>-</operator>
+            <keyword>200</keyword>
+        </line>
+    </code>
+
+    <slabel>output</slabel>
+    <output>
+        805
+    </output>
+
+    <h3>Compatibility Table</h3>
+    Some operations may not be available on all types, or will operate differently depending on the type.<br>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Compatible</th>
+        </tr>
+        <tr>
+            <td>
+                <type>Boolean</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Float</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Int</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>uInt</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>String</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Multiplication</h2>
+    Multiply two values together.<br><br>
+    The operator for multiplication is <operator>*</operator>.<br>
+
+    The following is an example of how to use the multiplication operator:
+    <slabel>multiply.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <keyword>print</keyword>
+            <keyword>5.25</keyword>
+            <operator>*</operator>
+            <keyword>3.5</keyword>
+        </line>
+    </code>
+
+    <slabel>output</slabel>
+    <output>
+        18.375
+    </output>
+
+    <h3>Compatibility Table</h3>
+    Some operations may not be available on all types, or will operate differently depending on the type.<br>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Compatible</th>
+        </tr>
+        <tr>
+            <td>
+                <type>Boolean</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Float</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Int</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>uInt</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>String</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Divide</h2>
+    Divide one value by another.<br><br>
+    The operator for division is <operator>/</operator>.<br>
+
+    The following is an example of how to use the division operator:
+    <slabel>divide.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <keyword>print</keyword>
+            <keyword>u48</keyword>
+            <operator>/</operator>
+            <keyword>u6</keyword>
+        </line>
+    </code>
+
+    <slabel>output</slabel>
+    <output>
+        u8
+    </output>
+
+    <h3>Compatibility Table</h3>
+    Some operations may not be available on all types, or will operate differently depending on the type.<br>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Compatible</th>
+        </tr>
+        <tr>
+            <td>
+                <type>Boolean</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Float</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Int</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>uInt</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>String</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Modulo</h2>
+    Divide a number and return the remainder.<br>
+
+    Modulo always returns a <type>Float</type> rather than the same type as its inputs.<br><br>
+
+    The operator for modulu is <operator>%</operator>.<br>
+
+    The following is an example of how to use the modulo operator:
+
+    <slabel>modulo.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <keyword>print</keyword>
+            <keyword>10</keyword>
+            <operator>%</operator>
+            <keyword>5</keyword>
+        </line>
+    </code>
+
+    <slabel>output</slabel>
+    <output>
+        0.0
+    </output>
+
+    <h3>Compatibility Table</h3>
+    Some operations may not be available on all types, or will operate differently depending on the type.<br>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Compatible</th>
+        </tr>
+        <tr>
+            <td>
+                <type>Boolean</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Float</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Int</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>uInt</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>String</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Power</h2>
+    Raise a number to the power of another.<br><br>
+    The operator for power is <operator>^</operator>.<br>
+
+    The following is an example of how to use the power operator:
+
+    <slabel>power.kep</slabel>
+    <code>
+        <line>
+            <count>1</count>
+            <keyword>print</keyword>
+            <keyword>4</keyword>
+            <operator>^</operator>
+            <keyword>2</keyword>
+        </line>
+    </code>
+
+    <slabel>output</slabel>
+    <output>
+        16
+    </output>
+
+    <h3>Compatibility Table</h3>
+    Some operations may not be available on all types, or will operate differently depending on the type.<br>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Compatible</th>
+        </tr>
+        <tr>
+            <td>
+                <type>Boolean</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Float</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>Int</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>uInt</type>
+            </td>
+            <td>Yes.</td>
+        </tr>
+        <tr>
+            <td>
+                <type>String</type>
+            </td>
+            <td>No, unless casted to a compatible type.</td>
+        </tr>
+    </table>
+</section>

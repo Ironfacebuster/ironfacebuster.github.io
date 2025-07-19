@@ -1,0 +1,50 @@
+<h1>Arguments</h1>
+
+Kepler provides various commandline arguments that can alter the behavior of the interpreter.
+
+<h3>How to Use</h3>
+Arguments are very easy to use, and are passed when you execute the interpreter.<br><br>
+
+For example, this would launch Kepler and load a specific file from another location.
+<output>
+    kepler.exe --file "C:\Users\John_Doe\Desktop\test.kep"
+</output>
+
+<h3>Commandline Arguments</h3>
+This table shows all available arguments, what they do, and any required values they might need<br>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Req. Value</th>
+    </tr>
+    <tr>
+        <td>--file</td>
+        <td>The pathlike directory/filename of the kepler file.</td>
+        <td>Any filename or location.</td>
+    </tr>
+    <tr>
+        <td>
+            --headless
+        </td>
+        <td>Run in a "headless" mode.</td>
+    </tr>
+    <tr>
+        <td>--help</td>
+        <td>Show the list of arguments.</td>
+    </tr>
+    <tr>
+        <td>--version</td>
+        <td>Display the currently installed Kepler version.</td>
+    </tr>
+    <tr>
+        <td>--debug</td>
+        <td>Enable debug logging.</td>
+        <td>No value, or "verbose" for verbose debug.</td>
+    </tr>
+    <tr>
+        <td>--langserver</td>
+        <td>Disable normal functionality and provide language server features.</td>
+    </tr>
+</table>

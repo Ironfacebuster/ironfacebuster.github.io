@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- webp because of that sweet sweet size -->
+    <link rel="icon" type="image/webp" href="../kepler/kepler_logo.webp" sizes="128x128" />
+    <!-- png if webp isn't supported -->
+    <link rel="icon" type="image/png" href="../kepler/kepler_logo.png" sizes="128x128" />
+    <!-- backup -->
+    <link rel="icon" type="image/png" href="../kepler/kepler32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../kepler/kepler256x256.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../css/syntax.css">
+
+    <!-- kepler exclusive styling -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <link rel="stylesheet" href="./css/navbar.css">
+
+    <style>
+        h3 {
+            margin-bottom: 5px;
+        }
+    </style>
+
+    <title>Kepler</title>
+</head>
+
+<body>
+    <div id="nav_spacer" style="height: 122px; display: none;"></div>
+    <navbar style="position: static;" id="navbar">
+        <div style="margin-bottom:7.5px;">
+            <img class="kepler-logo" src="../kepler/kepler_logo.png" alt="Kepler!" onclick="ScrollToTop()">
+        </div>
+        <div>
+            <a href="../kepler">home</a>
+            <a active>about</a>
+            <a href="../kepler/docs">docs</a>
+        </div>
+    </navbar>
+
+    <slabel>©2022 - 2025 Ironfacebuster</slabel>
+</body>
+
+<script>
+    let nav = document.getElementById("navbar")
+    let nav_style = getComputedStyle(nav)
+
+    let spacer = document.getElementById("nav_spacer")
+    let new_height = [nav_style.height, nav_style.marginTop, nav_style.marginBottom, nav_style
+        .paddingTop, nav_style.paddingBottom
+    ].map((a) => {
+        return px_to_int(a)
+    }).reduce((a, b) => a + b)
+
+    spacer.style.height = new_height
+
+    window.addEventListener("scroll", () => {
+        // fix navbar to top of screen
+        if (window.scrollY > 0) {
+            nav.style.position = "fixed"
+            nav.style.top = "0px"
+            spacer.style.display = "block"
+        } else {
+            nav.style.position = "static"
+            spacer.style.display = "none"
+        }
+    })
+</script>

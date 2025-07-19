@@ -1,0 +1,182 @@
+<h1>Comparisons</h1>
+
+Kepler has various comparisons to compare values, and control code flow.<br>
+Comparisons in Kepler will always result in a Boolean value, representing if the comparison was valid or not.<br>
+
+<h2>Equality</h2>
+"Equals" is a non-strict comparison of two values. Non-strict means that if the values types are not the same type, they
+will be converted to the same type and then compared.
+
+<slabel>equals.kep</slabel>
+<code>
+    <line>
+        <count>1</count>
+        <keyword>print</keyword>
+        <keyword>99</keyword>
+        <assign>equals</assign>
+        <keyword>100.0</keyword>
+    </line>
+    <line>
+        <count>2</count>
+    </line>
+    <line>
+        <count>3</count>
+        <keyword>print</keyword>
+        <keyword>25</keyword>
+        <assign>equals</assign>
+        <keyword>25.0</keyword>
+    </line>
+</code>
+<slabel>output</slabel>
+<output>
+    False<br>
+    True
+</output>
+
+<h2>Strict Equality</h2>
+The only strict equality in Kepler is the "==" operator. This returns False if the values are not the same type,
+otherwise it will compare the two values.
+
+<slabel>strict_equals.kep</slabel>
+<code>
+    <line>
+        <count>1</count>
+        <keyword>print</keyword>
+        <keyword>12</keyword>
+        <assign>==</assign>
+        <keyword>12.0</keyword>
+    </line>
+    <line>
+        <count>2</count>
+    </line>
+    <line>
+        <count>3</count>
+        <keyword>print</keyword>
+        <keyword>73</keyword>
+        <assign>==</assign>
+        <keyword>73</keyword>
+    </line>
+</code>
+<slabel>output</slabel>
+<output>
+    False<br>
+    True
+</output>
+
+<h2>Greater Than</h2>
+Greater than is a non-strict comparison. This checks if value "a" is greater than value "b".
+
+<slabel>gt.kep</slabel>
+<code>
+    <line>
+        <count>1</count>
+        <keyword>print</keyword>
+        <keyword>99</keyword>
+        <assign>></assign>
+        <keyword>2.0</keyword>
+    </line>
+    <line>
+        <count>2</count>
+    </line>
+    <line>
+        <count>3</count>
+        <keyword>print</keyword>
+        <keyword>u4</keyword>
+        <assign>></assign>
+        <keyword>1003</keyword>
+    </line>
+</code>
+<slabel>output</slabel>
+<output>
+    True<br>
+    False
+</output>
+
+<h2>Greater Than or Equal To</h2>
+Greater than or equal to is a non-strict comparison. This checks if value "a" is greater than, or equal to, the value of
+"b".
+
+<slabel>gtoe.kep</slabel>
+<code>
+    <line>
+        <count>1</count>
+        <keyword>print</keyword>
+        <keyword>56</keyword>
+        <assign>>=</assign>
+        <keyword>56.0</keyword>
+    </line>
+    <line>
+        <count>2</count>
+    </line>
+    <line>
+        <count>3</count>
+        <keyword>print</keyword>
+        <keyword>3</keyword>
+        <assign>>=</assign>
+        <keyword>50</keyword>
+    </line>
+</code>
+<slabel>output</slabel>
+<output>
+    True<br>
+    False
+</output>
+
+<h2>Less Than</h2>
+Less than is a non-strict comparison. This checks if value "a" is less than value "b".
+
+<slabel>lt.kep</slabel>
+<code>
+    <line>
+        <count>1</count>
+        <keyword>print</keyword>
+        <keyword>99</keyword>
+        <assign>&lt;</assign>
+        <keyword>2.0</keyword>
+    </line>
+    <line>
+        <count>2</count>
+    </line>
+    <line>
+        <count>3</count>
+        <keyword>print</keyword>
+        <keyword>u4</keyword>
+        <assign>&lt;</assign>
+        <keyword>1003</keyword>
+    </line>
+</code>
+<slabel>output</slabel>
+<output>
+    False<br>
+    True
+</output>
+
+<h2>Less Than or Equal To</h2>
+Less than or equal to is a non-strict comparison. This checks if value "a" is less than, or equal to, the value of
+"b".
+
+<slabel>ltoe.kep</slabel>
+<code>
+    <line>
+        <count>1</count>
+        <keyword>print</keyword>
+        <keyword>35</keyword>
+        <assign>&lt;=</assign>
+        <keyword>35.0</keyword>
+    </line>
+    <line>
+        <count>2</count>
+    </line>
+    <line>
+        <count>3</count>
+        <keyword>print</keyword>
+        <keyword>88</keyword>
+        <assign>&lt;=</assign>
+        <keyword>23</keyword>
+    </line>
+</code>
+<slabel>output</slabel>
+<output>
+    True<br>
+    False
+</output>
