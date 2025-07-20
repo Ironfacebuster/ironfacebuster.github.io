@@ -663,6 +663,20 @@
         font-size: 18px;
         margin-top: 5px;
     }
+
+    @-moz-document url-prefix() {
+
+        /* for some reason, the shadows aren't clipped on firefox and I'm too lazy to figure out how to fix it otherwise */
+        /* therefore, disable it :) */
+        shirts img {
+            filter: none;
+        }
+
+        shirts:hover img {
+            filter: none;
+        }
+
+    }
 </style>
 
 <script>
