@@ -142,5 +142,10 @@
 
 @font-face {
     font-family: "Roboto";
-    src: url("Roboto-Italic-VariableFont_wdth.ttf");
+    src: url("Roboto-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url("Gill\ Sans.otf");
 }
