@@ -196,6 +196,7 @@
 
     kepler img {
         width: 150px;
+        height: auto;
 
         transform: scale(0.85);
 
@@ -223,6 +224,11 @@
         position: relative;
 
         margin: 0px -30px -20px;
+    }
+
+    shirts img {
+        width: 910px;
+        height: auto;
     }
 
     shirts gradient {
@@ -674,4 +680,36 @@
     function NewTab(url) {
         window.open(url, '_blank').focus();
     }
+
+    const shirt_names = [
+        "./img/cashbandicootblack.png",
+        "./img/cashbandicootpurple.png",
+        "./img/classicbuster.png",
+        "./img/classicbusteryellow.png",
+        "./img/cultoffuny.png",
+        "./img/cultoffunypink.png",
+        "./img/silenthillshirt.png",
+        "./img/silenthillshirtred.png",
+    ]
+
+    // get 3 random shirts
+    let selected_index = []
+
+    while (true) {
+        let random_index = Math.floor(Math.random() * shirt_names.length)
+
+        if (selected_index.indexOf(random_index) == -1) {
+            selected_index.push(random_index)
+        }
+
+        if (selected_index.length >= 3) break
+    }
+
+    console.log(selected_index)
+
+
+
+    document.getElementsByClassName("leftshirt")[0].src = shirt_names[selected_index[0]]
+    document.getElementsByClassName("rightshirt")[0].src = shirt_names[selected_index[1]]
+    document.getElementsByClassName("middleshirt")[0].src = shirt_names[selected_index[2]]
 </script>
