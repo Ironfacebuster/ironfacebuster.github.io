@@ -63,7 +63,7 @@
                     <username onclick="NewTab('https:\/\/youtube.com/@ironfacebuster')">Ironfacebuster</username>
                     <subcount>done bajillion subscribers</subcount>
                 </div>
-                <subscribe onclick="NewTab('https:\/\/youtube.com/@ironfacebuster')">Subscribe
+                <subscribe onclick="NewTab('https:/\/www.youtube.com/@ironfacebuster?sub_confirmation=1')">Subscribe
                 </subscribe>
             </youtube>
 
@@ -81,7 +81,23 @@
                     <username onclick="NewTab('https:\/\/www.youtube.com/@therejectsgroup')">The Rejects</username>
                     <subcount>then crillion subscribers</subcount>
                 </div>
-                <subscribe onclick="NewTab('https:\/\/www.youtube.com/@therejectsgroup')">Subscribe
+                <subscribe onclick="NewTab('https:\/\/www.youtube.com/@therejectsgroup?sub_confirmation=1')">Subscribe
+                </subscribe>
+            </youtube>
+
+            <divider></divider>
+
+            <h2>Wazoo</h2>
+            <p>My second, IRL focused channel. I post computers, cars, and sometimes vlogs here. This one's more laid
+                back than the other content.</p>
+
+            <youtube>
+                <img src="./img/wazoo.jpg">
+                <div>
+                    <username onclick="NewTab('https:\/\/youtube.com/@wazooguy')">Wazoo</username>
+                    <subcount>fivety subscribers</subcount>
+                </div>
+                <subscribe onclick="NewTab('https:/\/www.youtube.com/@wazooguy?sub_confirmation=1')">Subscribe
                 </subscribe>
             </youtube>
         </floater>
@@ -91,7 +107,7 @@
         <floater>
             <header>Live</header>
             <p>
-                I stream semi-frequently, bringing enthusiasm and mostly really bad dad jokes and video games together!
+                I stream semi-frequently bringing enthusiasm, really corny dad jokes, and video games together!
                 I'm most well known for being the guy who drinks water.
             </p>
             <p>Feel free to drop by, have a chat with me, and experience the dad jokes IN REAL TIME!</p>
@@ -110,6 +126,20 @@
                     Follow
                 </follow>
             </twitch>
+
+            <divider></divider>
+
+            <h2>VODs</h2>
+            <p>This is where all VODs go to... not die? I post unedited streams here, for your viewing pleasure.</p>
+
+            <youtube>
+                <img src="./img/vods.jpg">
+                <div>
+                    <username onclick="NewTab('https:\/\/youtube.com/@ironOD')">Ironfacebuster On Demand</username>
+                    <subcount>clundred billion subscribers</subcount>
+                </div>
+                <subscribe onclick="NewTab('http:/\/youtube.com/@ironOD?sub_confirmation=1')">Subscribe</subscribe>
+            </youtube>
         </floater>
 
         <floater class="tracer"></floater>
@@ -150,7 +180,9 @@
 
         <floater>
             <header>Socials</header>
-            <p>I'm @ironfacebuster on everywhere and everything! I'm not super active on most platforms, the exclusion
+            <p>I'm <tag title="Click to copy!">@ironfacebuster</tag> on everywhere and everything! I'm not super active
+                on most
+                platforms, the exclusion
                 being my Discord server.</p>
 
             <divider></divider>
@@ -182,6 +214,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    tag {
+        font-weight: bold;
+
+        cursor: pointer;
     }
 
     kepler {
@@ -274,7 +312,7 @@
 
         filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.35));
 
-        transform: scale(0.4) translateY(30px) rotate(-5deg);
+        transform: scale(0.4) translateY(75px) rotate(-5deg);
     }
 
     shirts:hover .leftshirt {
@@ -529,7 +567,7 @@
         margin-bottom: 10px;
         margin-top: -10px;
 
-        font-family: "Oswald", Arial, Helvetica, sans-serif;
+        /* font-family: "Oswald", Arial, Helvetica, sans-serif; */
 
         overflow: hidden;
     }
@@ -684,7 +722,6 @@
     const twitchURL = "https://twitch.tv/ironfacebuster"
 
     const tiltRange = 3
-
     let tiltObjects = document.getElementsByTagName("floater")
 
     for (let i = 0; i < tiltObjects.length; i++) {
@@ -704,6 +741,8 @@
         "./img/cultoffunypink.png",
         "./img/silenthillshirt.png",
         "./img/silenthillshirtred.png",
+        "./img/stickers.png",
+        "./img/holosticker.png",
     ]
 
     // get 3 random shirts
@@ -719,11 +758,15 @@
         if (selected_index.length >= 3) break
     }
 
-    console.log(selected_index)
-
-
-
     document.getElementsByClassName("leftshirt")[0].src = shirt_names[selected_index[0]]
     document.getElementsByClassName("rightshirt")[0].src = shirt_names[selected_index[1]]
     document.getElementsByClassName("middleshirt")[0].src = shirt_names[selected_index[2]]
+
+    // maybe add more tags to copy who knows, we can go crazy!
+    const tags = document.getElementsByTagName("tag")
+    for (let i = 0; i < tags.length; i++) {
+        tags[i].addEventListener("click", () => {
+            navigator.clipboard.writeText(tags[i].innerText)
+        })
+    }
 </script>
